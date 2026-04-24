@@ -1,12 +1,37 @@
-# CEUC102 - OBJECT ORIENTED PROGRAMMING WITH C++
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
 
-## Submission Github Repository
-
-- This Github Repo contains practicals from the practical list, sorted folder wise
-
-- Each Containing Code for that practical, named 1.cpp,2.cpp,...
-along with its compiled code
-
-* All code has been compiled and tested on the following environment: 
-    - Debian Linux - 6.17.0
-    - g++ - 15.2.0
+int main()
+{
+    vector <int> v;
+    cout << "Enter the number of elements in the first vector: ";
+    int n;
+    cin >> n;
+    cout << "Enter the elements of the vector: ";
+    for (int i = 0; i < n; i++)
+    {
+        int element;
+        cin >> element;
+        v.push_back(element);
+    }
+    vector <int> v_rev_it;
+    for (auto it = v.rbegin(); it != v.rend(); it++)
+    {
+        v_rev_it.push_back(*it);
+    }
+    reverse(v.begin(), v.end());
+    cout << "The reversed vector using reverse iterators is: ";
+    for(int value: v)
+    {
+        cout << value << " ";
+    }
+    cout << "The reversed vector using the reverse function is: ";
+    for(int value: v)
+    {
+        cout << value << " ";
+    }
+    cout << endl;
+    return 0;
+}
